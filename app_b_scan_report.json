@@ -1,0 +1,264 @@
+
+Testing micarthur21/app_b:v1...
+
+✗ Low severity vulnerability found in openssl/libcrypto1.1
+  Description: Inadequate Encryption Strength
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-OPENSSL-1089236
+  Introduced through: openssl/libcrypto1.1@1.1.1a-r1, openssl/libssl1.1@1.1.1a-r1, .python-rundeps@0, apk-tools/apk-tools@2.10.3-r1, libtls-standalone/libtls-standalone@2.7.4-r6, ca-certificates/ca-certificates@20190108-r0, krb5-conf/krb5-conf@1.0-r1
+  From: openssl/libcrypto1.1@1.1.1a-r1
+  From: openssl/libssl1.1@1.1.1a-r1 > openssl/libcrypto1.1@1.1.1a-r1
+  From: .python-rundeps@0 > openssl/libcrypto1.1@1.1.1a-r1
+  and 9 more...
+  Fixed in: 1.1.1j-r0
+
+✗ Low severity vulnerability found in openssl/libcrypto1.1
+  Description: Use of a Broken or Risky Cryptographic Algorithm
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-OPENSSL-505098
+  Introduced through: openssl/libcrypto1.1@1.1.1a-r1, openssl/libssl1.1@1.1.1a-r1, .python-rundeps@0, apk-tools/apk-tools@2.10.3-r1, libtls-standalone/libtls-standalone@2.7.4-r6, ca-certificates/ca-certificates@20190108-r0, krb5-conf/krb5-conf@1.0-r1
+  From: openssl/libcrypto1.1@1.1.1a-r1
+  From: openssl/libssl1.1@1.1.1a-r1 > openssl/libcrypto1.1@1.1.1a-r1
+  From: .python-rundeps@0 > openssl/libcrypto1.1@1.1.1a-r1
+  and 9 more...
+  Fixed in: 1.1.1d-r0
+
+✗ Medium severity vulnerability found in sqlite/sqlite-libs
+  Description: Divide By Zero
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-SQLITE-487067
+  Introduced through: sqlite/sqlite-libs@3.26.0-r3, .python-rundeps@0
+  From: sqlite/sqlite-libs@3.26.0-r3
+  From: .python-rundeps@0 > sqlite/sqlite-libs@3.26.0-r3
+  Fixed in: 3.28.0-r1
+
+✗ Medium severity vulnerability found in sqlite/sqlite-libs
+  Description: NULL Pointer Dereference
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-SQLITE-587452
+  Introduced through: sqlite/sqlite-libs@3.26.0-r3, .python-rundeps@0
+  From: sqlite/sqlite-libs@3.26.0-r3
+  From: .python-rundeps@0 > sqlite/sqlite-libs@3.26.0-r3
+  Fixed in: 3.28.0-r2
+
+✗ Medium severity vulnerability found in openssl/libcrypto1.1
+  Description: NULL Pointer Dereference
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-OPENSSL-1089231
+  Introduced through: openssl/libcrypto1.1@1.1.1a-r1, openssl/libssl1.1@1.1.1a-r1, .python-rundeps@0, apk-tools/apk-tools@2.10.3-r1, libtls-standalone/libtls-standalone@2.7.4-r6, ca-certificates/ca-certificates@20190108-r0, krb5-conf/krb5-conf@1.0-r1
+  From: openssl/libcrypto1.1@1.1.1a-r1
+  From: openssl/libssl1.1@1.1.1a-r1 > openssl/libcrypto1.1@1.1.1a-r1
+  From: .python-rundeps@0 > openssl/libcrypto1.1@1.1.1a-r1
+  and 9 more...
+  Fixed in: 1.1.1k-r0
+
+✗ Medium severity vulnerability found in openssl/libcrypto1.1
+  Description: NULL Pointer Dereference
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-OPENSSL-1089233
+  Introduced through: openssl/libcrypto1.1@1.1.1a-r1, openssl/libssl1.1@1.1.1a-r1, .python-rundeps@0, apk-tools/apk-tools@2.10.3-r1, libtls-standalone/libtls-standalone@2.7.4-r6, ca-certificates/ca-certificates@20190108-r0, krb5-conf/krb5-conf@1.0-r1
+  From: openssl/libcrypto1.1@1.1.1a-r1
+  From: openssl/libssl1.1@1.1.1a-r1 > openssl/libcrypto1.1@1.1.1a-r1
+  From: .python-rundeps@0 > openssl/libcrypto1.1@1.1.1a-r1
+  and 9 more...
+  Fixed in: 1.1.1i-r0
+
+✗ Medium severity vulnerability found in openssl/libcrypto1.1
+  Description: Integer Overflow or Wraparound
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-OPENSSL-1089234
+  Introduced through: openssl/libcrypto1.1@1.1.1a-r1, openssl/libssl1.1@1.1.1a-r1, .python-rundeps@0, apk-tools/apk-tools@2.10.3-r1, libtls-standalone/libtls-standalone@2.7.4-r6, ca-certificates/ca-certificates@20190108-r0, krb5-conf/krb5-conf@1.0-r1
+  From: openssl/libcrypto1.1@1.1.1a-r1
+  From: openssl/libssl1.1@1.1.1a-r1 > openssl/libcrypto1.1@1.1.1a-r1
+  From: .python-rundeps@0 > openssl/libcrypto1.1@1.1.1a-r1
+  and 9 more...
+  Fixed in: 1.1.1j-r0
+
+✗ Medium severity vulnerability found in openssl/libcrypto1.1
+  Description: Missing Encryption of Sensitive Data
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-OPENSSL-491992
+  Introduced through: openssl/libcrypto1.1@1.1.1a-r1, openssl/libssl1.1@1.1.1a-r1, .python-rundeps@0, apk-tools/apk-tools@2.10.3-r1, libtls-standalone/libtls-standalone@2.7.4-r6, ca-certificates/ca-certificates@20190108-r0, krb5-conf/krb5-conf@1.0-r1
+  From: openssl/libcrypto1.1@1.1.1a-r1
+  From: openssl/libssl1.1@1.1.1a-r1 > openssl/libcrypto1.1@1.1.1a-r1
+  From: .python-rundeps@0 > openssl/libcrypto1.1@1.1.1a-r1
+  and 9 more...
+  Fixed in: 1.1.1d-r0
+
+✗ Medium severity vulnerability found in openssl/libcrypto1.1
+  Description: Use of Insufficiently Random Values
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-OPENSSL-501158
+  Introduced through: openssl/libcrypto1.1@1.1.1a-r1, openssl/libssl1.1@1.1.1a-r1, .python-rundeps@0, apk-tools/apk-tools@2.10.3-r1, libtls-standalone/libtls-standalone@2.7.4-r6, ca-certificates/ca-certificates@20190108-r0, krb5-conf/krb5-conf@1.0-r1
+  From: openssl/libcrypto1.1@1.1.1a-r1
+  From: openssl/libssl1.1@1.1.1a-r1 > openssl/libcrypto1.1@1.1.1a-r1
+  From: .python-rundeps@0 > openssl/libcrypto1.1@1.1.1a-r1
+  and 9 more...
+  Fixed in: 1.1.1d-r0
+
+✗ Medium severity vulnerability found in openssl/libcrypto1.1
+  Description: Information Exposure
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-OPENSSL-588019
+  Introduced through: openssl/libcrypto1.1@1.1.1a-r1, openssl/libssl1.1@1.1.1a-r1, .python-rundeps@0, apk-tools/apk-tools@2.10.3-r1, libtls-standalone/libtls-standalone@2.7.4-r6, ca-certificates/ca-certificates@20190108-r0, krb5-conf/krb5-conf@1.0-r1
+  From: openssl/libcrypto1.1@1.1.1a-r1
+  From: openssl/libssl1.1@1.1.1a-r1 > openssl/libcrypto1.1@1.1.1a-r1
+  From: .python-rundeps@0 > openssl/libcrypto1.1@1.1.1a-r1
+  and 9 more...
+  Fixed in: 1.1.1d-r2
+
+✗ Medium severity vulnerability found in musl/musl-utils
+  Description: Out-of-bounds Write
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-MUSL-1042761
+  Introduced through: musl/musl-utils@1.1.20-r3, libc-dev/libc-utils@0.7.1-r0, meta-common-packages@meta
+  From: musl/musl-utils@1.1.20-r3
+  From: libc-dev/libc-utils@0.7.1-r0 > musl/musl-utils@1.1.20-r3
+  From: meta-common-packages@meta > musl/musl@1.1.20-r3
+  Fixed in: 1.1.20-r6
+
+✗ Medium severity vulnerability found in e2fsprogs/libcom_err
+  Description: Out-of-bounds Write
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-E2FSPROGS-496794
+  Introduced through: e2fsprogs/libcom_err@1.44.5-r0, krb5-conf/krb5-conf@1.0-r1
+  From: e2fsprogs/libcom_err@1.44.5-r0
+  From: krb5-conf/krb5-conf@1.0-r1 > krb5/krb5-libs@1.15.5-r0 > e2fsprogs/libcom_err@1.44.5-r0
+  Fixed in: 1.44.5-r1
+
+✗ Medium severity vulnerability found in e2fsprogs/libcom_err
+  Description: Out-of-bounds Write
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-E2FSPROGS-589311
+  Introduced through: e2fsprogs/libcom_err@1.44.5-r0, krb5-conf/krb5-conf@1.0-r1
+  From: e2fsprogs/libcom_err@1.44.5-r0
+  From: krb5-conf/krb5-conf@1.0-r1 > krb5/krb5-libs@1.15.5-r0 > e2fsprogs/libcom_err@1.44.5-r0
+  Fixed in: 1.44.5-r2
+
+✗ High severity vulnerability found in sqlite/sqlite-libs
+  Description: CVE-2019-19244
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-SQLITE-1019958
+  Introduced through: sqlite/sqlite-libs@3.26.0-r3, .python-rundeps@0
+  From: sqlite/sqlite-libs@3.26.0-r3
+  From: .python-rundeps@0 > sqlite/sqlite-libs@3.26.0-r3
+  Fixed in: 3.28.0-r2
+
+✗ High severity vulnerability found in sqlite/sqlite-libs
+  Description: Out-of-bounds Read
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-SQLITE-449671
+  Introduced through: sqlite/sqlite-libs@3.26.0-r3, .python-rundeps@0
+  From: sqlite/sqlite-libs@3.26.0-r3
+  From: .python-rundeps@0 > sqlite/sqlite-libs@3.26.0-r3
+  Fixed in: 3.28.0-r0
+
+✗ High severity vulnerability found in sqlite/sqlite-libs
+  Description: Use After Free
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-SQLITE-449762
+  Introduced through: sqlite/sqlite-libs@3.26.0-r3, .python-rundeps@0
+  From: sqlite/sqlite-libs@3.26.0-r3
+  From: .python-rundeps@0 > sqlite/sqlite-libs@3.26.0-r3
+  Fixed in: 3.28.0-r0
+
+✗ High severity vulnerability found in sqlite/sqlite-libs
+  Description: Improper Initialization
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-SQLITE-587441
+  Introduced through: sqlite/sqlite-libs@3.26.0-r3, .python-rundeps@0
+  From: sqlite/sqlite-libs@3.26.0-r3
+  From: .python-rundeps@0 > sqlite/sqlite-libs@3.26.0-r3
+  Fixed in: 3.28.0-r3
+
+✗ High severity vulnerability found in openssl/libcrypto1.1
+  Description: Improper Certificate Validation
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-OPENSSL-1089232
+  Introduced through: openssl/libcrypto1.1@1.1.1a-r1, openssl/libssl1.1@1.1.1a-r1, .python-rundeps@0, apk-tools/apk-tools@2.10.3-r1, libtls-standalone/libtls-standalone@2.7.4-r6, ca-certificates/ca-certificates@20190108-r0, krb5-conf/krb5-conf@1.0-r1
+  From: openssl/libcrypto1.1@1.1.1a-r1
+  From: openssl/libssl1.1@1.1.1a-r1 > openssl/libcrypto1.1@1.1.1a-r1
+  From: .python-rundeps@0 > openssl/libcrypto1.1@1.1.1a-r1
+  and 9 more...
+  Fixed in: 1.1.1k-r0
+
+✗ High severity vulnerability found in openssl/libcrypto1.1
+  Description: Integer Overflow or Wraparound
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-OPENSSL-1089235
+  Introduced through: openssl/libcrypto1.1@1.1.1a-r1, openssl/libssl1.1@1.1.1a-r1, .python-rundeps@0, apk-tools/apk-tools@2.10.3-r1, libtls-standalone/libtls-standalone@2.7.4-r6, ca-certificates/ca-certificates@20190108-r0, krb5-conf/krb5-conf@1.0-r1
+  From: openssl/libcrypto1.1@1.1.1a-r1
+  From: openssl/libssl1.1@1.1.1a-r1 > openssl/libcrypto1.1@1.1.1a-r1
+  From: .python-rundeps@0 > openssl/libcrypto1.1@1.1.1a-r1
+  and 9 more...
+  Fixed in: 1.1.1j-r0
+
+✗ High severity vulnerability found in openssl/libcrypto1.1
+  Description: Use of a Broken or Risky Cryptographic Algorithm
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-OPENSSL-340660
+  Introduced through: openssl/libcrypto1.1@1.1.1a-r1, openssl/libssl1.1@1.1.1a-r1, .python-rundeps@0, apk-tools/apk-tools@2.10.3-r1, libtls-standalone/libtls-standalone@2.7.4-r6, ca-certificates/ca-certificates@20190108-r0, krb5-conf/krb5-conf@1.0-r1
+  From: openssl/libcrypto1.1@1.1.1a-r1
+  From: openssl/libssl1.1@1.1.1a-r1 > openssl/libcrypto1.1@1.1.1a-r1
+  From: .python-rundeps@0 > openssl/libcrypto1.1@1.1.1a-r1
+  and 9 more...
+  Fixed in: 1.1.1b-r1
+
+✗ High severity vulnerability found in openssl/libcrypto1.1
+  Description: NULL Pointer Dereference
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-OPENSSL-588029
+  Introduced through: openssl/libcrypto1.1@1.1.1a-r1, openssl/libssl1.1@1.1.1a-r1, .python-rundeps@0, apk-tools/apk-tools@2.10.3-r1, libtls-standalone/libtls-standalone@2.7.4-r6, ca-certificates/ca-certificates@20190108-r0, krb5-conf/krb5-conf@1.0-r1
+  From: openssl/libcrypto1.1@1.1.1a-r1
+  From: openssl/libssl1.1@1.1.1a-r1 > openssl/libcrypto1.1@1.1.1a-r1
+  From: .python-rundeps@0 > openssl/libcrypto1.1@1.1.1a-r1
+  and 9 more...
+  Fixed in: 1.1.1g-r0
+
+✗ High severity vulnerability found in musl/musl-utils
+  Description: Out-of-bounds Write
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-MUSL-458529
+  Introduced through: musl/musl-utils@1.1.20-r3, libc-dev/libc-utils@0.7.1-r0, meta-common-packages@meta
+  From: musl/musl-utils@1.1.20-r3
+  From: libc-dev/libc-utils@0.7.1-r0 > musl/musl-utils@1.1.20-r3
+  From: meta-common-packages@meta > musl/musl@1.1.20-r3
+  Fixed in: 1.1.20-r5
+
+✗ High severity vulnerability found in krb5/krb5-libs
+  Description: Uncontrolled Recursion
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-KRB5-1045189
+  Introduced through: krb5/krb5-libs@1.15.5-r0, krb5-conf/krb5-conf@1.0-r1, libtirpc/libtirpc@1.0.3-r0
+  From: krb5/krb5-libs@1.15.5-r0
+  From: krb5-conf/krb5-conf@1.0-r1 > krb5/krb5-libs@1.15.5-r0
+  From: libtirpc/libtirpc@1.0.3-r0 > krb5/krb5-libs@1.15.5-r0
+  Fixed in: 1.15.5-r1
+
+✗ High severity vulnerability found in expat/expat
+  Description: XML External Entity (XXE) Injection
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-EXPAT-453353
+  Introduced through: expat/expat@2.2.6-r0, .python-rundeps@0
+  From: expat/expat@2.2.6-r0
+  From: .python-rundeps@0 > expat/expat@2.2.6-r0
+  Fixed in: 2.2.7-r0
+
+✗ High severity vulnerability found in expat/expat
+  Description: Out-of-bounds Read
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-EXPAT-485094
+  Introduced through: expat/expat@2.2.6-r0, .python-rundeps@0
+  From: expat/expat@2.2.6-r0
+  From: .python-rundeps@0 > expat/expat@2.2.6-r0
+  Fixed in: 2.2.7-r1
+
+✗ High severity vulnerability found in bzip2/libbz2
+  Description: Out-of-bounds Write
+  Info: https://snyk.io/vuln/SNYK-ALPINE39-BZIP2-452847
+  Introduced through: bzip2/libbz2@1.0.6-r6, .python-rundeps@0
+  From: bzip2/libbz2@1.0.6-r6
+  From: .python-rundeps@0 > bzip2/libbz2@1.0.6-r6
+  Fixed in: 1.0.6-r7
+
+
+
+Package manager:   apk
+Project name:      docker-image|micarthur21/app_b
+Docker image:      micarthur21/app_b:v1
+Platform:          linux/amd64
+Base image:        python:3.7.2-alpine3.9
+
+Tested 36 dependencies for known vulnerabilities, found 26 vulnerabilities.
+
+Base Image              Vulnerabilities  Severity
+python:3.7.2-alpine3.9  26               13 high, 11 medium, 2 low
+
+Recommendations for base image upgrade:
+
+Alternative image types
+Base Image                    Vulnerabilities  Severity
+python:3.10.0rc1-slim         39               1 high, 1 medium, 37 low
+python:3.10-rc-slim           39               1 high, 1 medium, 37 low
+python:3.9.6-slim-bullseye    41               3 high, 1 medium, 37 low
+python:3.10.0rc1-slim-buster  71               11 high, 8 medium, 52 low
+
+Alpine 3.9.2 is no longer supported by the Alpine maintainers. Vulnerability detection may be affected by a lack of security updates.
+
+For more free scans that keep your images secure, sign up to Snyk at https://dockr.ly/3ePqVcp
+

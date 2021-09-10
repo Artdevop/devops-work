@@ -1,0 +1,78 @@
+---
+
+version: '3'
+
+output: prefixed
+
+tasks:
+
+  run-app:
+    deps: [app-a, app-b]
+
+  app-a: 
+    cmds:
+      - python3 backend/app_a/app_a.py
+
+  app-b:
+    cmds:
+      - python3 backend/app_b/app_b.py
+
+  build:
+    deps: [build-app-a, build-app-b]
+
+  helm:
+    deps: [helm-app-a, helm-app-b]
+
+  k8s:
+    deps: [k8s-app-a,k8s-app-b]
+
+  #Build Steps
+  build-app-a:
+    cmds:
+      - docker build -t micarthur21/app_a:v1 -f ./backend/app_a/src/Dockerfile ./backend/app_a/src
+      - docker push micarthur21/app_a:v1
+
+  build-app-b:
+    cmds:
+      - docker build -t micarthur21/app_b:v1 -f ./backend/app_b/src/Dockerfile ./backend/app_b/src
+      - docker push micarthur21/app_b:v1      
+
+  #Deploy Steps
+  helm-app-a:
+    cmds:
+      - helm template backend/app_a/charts -f backend/app_a/charts/env-values/dev-values.yaml --output-dir dev.tmp 
+  
+  k8s-ns:
+    - kubectl create namespace devopswork --dry-run -o yaml | kubectl apply -f -
+
+  k8s-app-a:
+    deps:
+      - k8s-ns
+    cmds:
+      - kubectl delete -f dev.tmp/app-a/templates -n devopswork --force || true
+      - kubectl apply -f dev.tmp/app-a/templates -n devopswork
+
+  k8s-app-b:
+    deps:
+      - k8s-ns  
+    cmds:
+      - kubectl delete -f dev.tmp/app-b/templates -n devopswork --force || true
+      - kubectl apply -f dev.tmp/app-b/templates -n devopswork
+
+  helm-app-b:
+    cmds:
+      - helm template backend/app_b/charts -f backend/app_b/charts/env-values/dev-values.yaml --output-dir dev.tmp 
+  
+  #Docker Scan
+  scan:
+    deps:
+      - scan-app-a      
+      - scan-app-b
+
+  scan-app-a:
+    cmds:
+      - docker scan --accept-license micarthur21/app_a:v1  > app_a_scan_report.json  || true     
+
+  scan-app-b:
+    cmds:
+      - docker scan --accept-license micarthur21/app_b:v1  > app_b_scan_report.json  || true

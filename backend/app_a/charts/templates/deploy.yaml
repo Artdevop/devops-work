@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: &deploy_name app-a
+  labels:
+    app: *deploy_name
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: *deploy_name
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 50%
+      maxSurge: 30%
+  template:
+    metadata:
+      labels:
+        app: *deploy_name
+    spec:
+      # serviceAccountName: {{ .Values.serviceAccounts }}
+      containers:
+        - image: {{ .Values.image }}
+          name: *deploy_name
+          env:
+            - name: sample_secret_key
+              valueFrom:
+                secretKeyRef:
+                  name: *deploy_name
+                  key: sample_secret_key
+                  optional: false
+          resources:
+            requests:
+              cpu: 200m
+              memory: 200Mi
+            limits:
+              cpu: 400m
+              memory: 200Mi
+          ports:
+            - name: api
+              containerPort: 5000
+          livenessProbe:
+            tcpSocket:
+              port: api
+            timeoutSeconds: 3
+            failureThreshold: 1
+            periodSeconds: 5
+          startupProbe:
+            tcpSocket:
+              port: api
+            timeoutSeconds: 3
+            failureThreshold: 5
+            periodSeconds: 5

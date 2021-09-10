@@ -1,0 +1,2 @@
+replicas: 1
+image: micarthur21/app_a:v1
