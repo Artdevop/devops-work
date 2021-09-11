@@ -9,7 +9,6 @@ backend/app_b/src/Dockerfile
 DONE
 
 -Set up automated local static image scans of the resulting images using a tool like Snyk.NE
-
 Check the README.md and Tasksfile. 
 
 -Create a basic Kubernetes deployment for both applications. 
@@ -73,7 +72,6 @@ DONE
 -Automated local Kubernetes environment for testing.
 Ingress.Yaml file created
 
-
 -Discuss how you would integrate regular scans into a CI pipeline, along with any caveats.
 Any Code changes should trigger the CI Build and it should execute the docker build (task build) and then do docker scan (task scan) to integrate with CI pipeline and store the vulnerability reports somewhere and review with dev / infra team to fix the vulnerabilities.
 
@@ -83,8 +81,8 @@ Tag the docker build with commit id to track the changes in git.
 
 
 -Discuss how you would expose and secure this application publicly on Kubernetes.
-Ingress Controller helps us to expose the application outside the Kubernetes Cluster in a secure manner. All apps must be exposed through the Ingress Controller.
+Ingress Controller helps us expose the application outside the Kubernetes Cluster in a secure manner. All apps must be exposed through the Ingress Controller.
 You should secure the app with TLS communication whereever possible.
 In order to use the TLS, Ingress controller should be configured with Public key and Private Key with the appropriate DNS entry in the public certificate. It is good practice to purchase the DNS cert from a well known CA Authority.
-This helps us to send encrypted traffic between client and server.
+This helps us send encrypted traffic between client and server.
 
