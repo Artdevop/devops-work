@@ -20,8 +20,17 @@ spec:
         app: *deploy_name
     spec:
       # serviceAccountName: {{ .Values.serviceAccounts }}
-      containers:
+      containers:    
         - image: {{ .Values.image }}
+          securityContext:  
+            readOnlyRootFilesystem: true  
+            # runAsNonRoot: true       
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - all
+              add:
+              - CHOWN               
           name: *deploy_name
           env:
             - name: sample_secret_key

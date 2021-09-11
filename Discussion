@@ -1,0 +1,86 @@
+Your task is to accomplish the following:
+
+-Dockerize the two included applications. DONE
+backend/app_a/src/Dockerfile
+backend/app_b/src/Dockerfile
+
+
+-Apply OWASP image hardening best practices to both containers.
+DONE
+
+-Set up automated local static image scans of the resulting images using a tool like Snyk.NE
+
+Check the README.md and Tasksfile. Can you specify the section like the other
+
+
+-Create a basic Kubernetes deployment for both applications. 
+backend/app_b/charts
+backend/app_a/charts
+Check the README.md and Tasksfile
+
+-The deployment should incorporate any OWASP guidance for running containers. 
+Setting the namespace for a request - Already doing 
+      - kubectl apply -f dev.tmp/app-b/templates -n devopswork
+RULE #2 - Set a user¶
+
+RULE #3 - Limit capabilities (Grant only specific capabilities, needed by a container)¶
+
+RULE #4 - Add –no-new-privileges flag¶
+
+RULE #7 - Limit resources (memory, CPU, file descriptors, processes, restarts)¶
+
+RULE #8 - Set filesystem and volumes to read-only¶
+
+RULE #9 - Use static analysis tools¶
+
+Use Kubernetes namespaces to properly isolate your Kubernetes resources¶
+
+Assess the privileges used by containers¶
+
+Apply Security Context to Your Pods and Containers¶
+
+Limiting resource usage on a cluster¶
+
+Securing data¶
+
+
+-Ensure that all steps (build, scan, and local kubernetes deployment) can be easily performed using the included task file.
+DONE through the Taskfile.
+
+
+
+
+Don't Let the Dog Eat Your Homework
+
+For delivery of this assignment, we'd like to see:
+
+Dockerfiles for both included applications with OWASP guidelines applied to the image.
+A Task in the Taskfile that automates local static image scans of the resulting images.
+A Kubernetes deployment file that deploys both apps using OWASP runtime guidelines.
+All work orchestrated through the included Taskfile.yaml, documentation here
+
+
+Bonus Points for Any of the Following
+
+Separate build and deploy stages in your Dockerfiles.
+FOLLOWED
+
+Automated local Kubernetes environment for testing.
+HOLD DUE TO MEMORY ISSUES.
+
+
+Discuss how you would integrate regular scans into a CI pipeline, along with any caveats.
+Any Code changes should trigger the CI Build and it should execute the docker build (task build) and then do docker scan (task scan) to integrate with CI pipeline and store the vulnerabilities reports somewhere and review with dev / infra team to fix the vulnerabilities.
+
+Docker build and scan take lots of time so you must do some local/remote caching to speed up the build process. 
+
+Tag the docker build with commit id to track the changes in git.
+
+
+Discuss how you would expose and secure this application publicly on Kubernetes.
+Ingress Controller help us to expose the application outside the Kubernetes Cluster with secure manner, so all app must be exposed through the Ingress Controller.
+You should secure the app with TLS communcation whereever possible.
+In order to use the TLS, Ingress controller should be configured with Public key and Private Key with appropriate DNS entry in the public certificate. It's good practice to purchase the DNS cert from a well known CA Authority.
+This help us to send encrypted traffic between client and server.
+
+What thought process are they referring? 
