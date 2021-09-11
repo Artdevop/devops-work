@@ -10,8 +10,7 @@ DONE
 
 -Set up automated local static image scans of the resulting images using a tool like Snyk.NE
 
-Check the README.md and Tasksfile. Can you specify the section like the other
-
+Check the README.md and Tasksfile. 
 
 -Create a basic Kubernetes deployment for both applications. 
 backend/app_b/charts
@@ -19,8 +18,9 @@ backend/app_a/charts
 Check the README.md and Tasksfile
 
 -The deployment should incorporate any OWASP guidance for running containers. 
-Setting the namespace for a request - Already doing 
-      - kubectl apply -f dev.tmp/app-b/templates -n devopswork
+
+RULE #1 - Setting the namespace for a request  
+
 RULE #2 - Set a user¶
 
 RULE #3 - Limit capabilities (Grant only specific capabilities, needed by a container)¶
@@ -45,42 +45,46 @@ Securing data¶
 
 
 -Ensure that all steps (build, scan, and local kubernetes deployment) can be easily performed using the included task file.
-DONE through the Taskfile.
-
-
+DONE
 
 
 Don't Let the Dog Eat Your Homework
 
 For delivery of this assignment, we'd like to see:
 
-Dockerfiles for both included applications with OWASP guidelines applied to the image.
-A Task in the Taskfile that automates local static image scans of the resulting images.
-A Kubernetes deployment file that deploys both apps using OWASP runtime guidelines.
-All work orchestrated through the included Taskfile.yaml, documentation here
+-Dockerfiles for both included applications with OWASP guidelines applied to the image.
+DONE
+
+-A Task in the Taskfile that automates local static image scans of the resulting images.
+DONE
+
+-A Kubernetes deployment file that deploys both apps using OWASP runtime guidelines.
+DONE
+
+-All work orchestrated through the included Taskfile.yaml, documentation here
+DONE
 
 
 Bonus Points for Any of the Following
 
-Separate build and deploy stages in your Dockerfiles.
-FOLLOWED
+-Separate build and deploy stages in your Dockerfiles.
+DONE
 
-Automated local Kubernetes environment for testing.
-HOLD DUE TO MEMORY ISSUES.
+-Automated local Kubernetes environment for testing.
+Ingress.Yaml file created
 
 
-Discuss how you would integrate regular scans into a CI pipeline, along with any caveats.
-Any Code changes should trigger the CI Build and it should execute the docker build (task build) and then do docker scan (task scan) to integrate with CI pipeline and store the vulnerabilities reports somewhere and review with dev / infra team to fix the vulnerabilities.
+-Discuss how you would integrate regular scans into a CI pipeline, along with any caveats.
+Any Code changes should trigger the CI Build and it should execute the docker build (task build) and then do docker scan (task scan) to integrate with CI pipeline and store the vulnerability reports somewhere and review with dev / infra team to fix the vulnerabilities.
 
 Docker build and scan take lots of time so you must do some local/remote caching to speed up the build process. 
 
 Tag the docker build with commit id to track the changes in git.
 
 
-Discuss how you would expose and secure this application publicly on Kubernetes.
-Ingress Controller help us to expose the application outside the Kubernetes Cluster with secure manner, so all app must be exposed through the Ingress Controller.
-You should secure the app with TLS communcation whereever possible.
-In order to use the TLS, Ingress controller should be configured with Public key and Private Key with appropriate DNS entry in the public certificate. It's good practice to purchase the DNS cert from a well known CA Authority.
-This help us to send encrypted traffic between client and server.
+-Discuss how you would expose and secure this application publicly on Kubernetes.
+Ingress Controller helps us to expose the application outside the Kubernetes Cluster in a secure manner. All apps must be exposed through the Ingress Controller.
+You should secure the app with TLS communication whereever possible.
+In order to use the TLS, Ingress controller should be configured with Public key and Private Key with the appropriate DNS entry in the public certificate. It is good practice to purchase the DNS cert from a well known CA Authority.
+This helps us to send encrypted traffic between client and server.
 
-What thought process are they referring? 

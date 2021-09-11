@@ -1,0 +1,124 @@
+# DevOps Assignment #
+
+## Application Design
+This assignemnt consists of the two Python applications which are exposed to a REST API. In order to run both of these applications in an isolated way, we will make these applications as containers and deploy them in Kubernetes through the automation deployment using the Taskfile.
+
+## Tools Required
+> 1. VSCode or Prefered IDE.
+> 2. Docker
+> 3. Helm
+> 4. Kubernetes (use minikube)
+> 5. Taskfile
+
+## Installation
+
+### Docker
+1. Follow this documentation to install Docker on Mac OS.
+https://docs.docker.com/desktop/mac/install/
+
+2. Log into Docker locally to confirm you can push the image to DockerHub.
+
+
+### Helm
+Follow this documentation to install Helm
+https://helm.sh/docs/intro/install/
+
+### Minikube
+Follow this documentation to install the minikube
+https://minikube.sigs.k8s.io/docs/start/
+
+Enable the Ingress add-ons in miniube
+  `minikube addons enable ingress`
+
+### Taskfile
+Follow this documentation to install the Taskfile
+https://taskfile.dev/#/installation?id=get-the-binary
+
+## STEPS
+
+### Create GitHub Repository
+Go to GitHub and create a git repository. Do git clone and  initialize this in VSCode.
+
+### Create a directory
+Follow these steps to create the directories to store the application code and DevOps scripts.
+
+> 1. mkdir -p backend/{app_a,app_b}/{src,charts}
+> 2. touch Taskfile
+> 3. touch .gitignore
+
+### Develop the Application Code
+> 1. Implement the application based on the requirements and make sure that it runs locally.
+
+Ex:
+
+`python main.py`
+
+
+### Create a Dockerfile (Build Step)
+Execute the following cmd to create the Dockerfile in the src/ directory.
+> 1. `touch Dockerfile .dockerignore`
+> 2. Dockerfile should have the FROM base image and user creation layer.
+> 3. Docekrfile should have the instructions to copy the requirements.txt and execute the `pip install` to install all required python packages.
+> 4. Finally add CMD to run the python application
+> 5. Once you create the Dockerfile, execute the following cmd to confirm that Dockerfile works fine.
+    `docker build -t <DOCKER_ID>/<IMAGE_NAME>:TAG`
+> 6. Push the image to Dockerhub
+    `docker push <DOCKER_ID>/<IMAGE_NAME>:TAG`
+> 7. Follow the OWASP Guidelines to secure the images.
+
+### Scan the Docker Image (Scan Step)
+> 1. Once you build the docker image, you must scan the docker image to find out if there is any vulnerability.
+    `docker scan --accept-license <DOCKER_ID>/<IMAGE_NAME>:TAG > <OUTPUT_FILE_NAME>`
+
+### Create a Helm Chart
+> 1. Helm charts use the following directory format.
+`
+charts/
+    env-values/
+        dev-value.yaml
+    tempaltes
+        _helpers.tpl
+        deploy.yaml
+        svc.yaml
+        ingress.yaml
+        secret.yaml
+    Chart.yaml
+`
+> 2. Create all files and folders for each applications.
+> 3. Add the Kubernetes Deployment Configuration into the deploy.yaml file.
+> 4. Add the Kubernetes Service Configuration into svc.yaml.
+> 5. Add the Kubernetes Ingress Configuration into ingress.yaml.
+> 6. Add the Kubernetes Secret Configuration into secret.yaml.
+> 7. Try to use the HELM variables for dynamics values such as 
+    `replica: 1`
+
+> 8. Execute the helm template command to create the Kubernetes manifests.
+    `helm template <ChartLocation> -f <VALUE_FILE> --output-dir <HELM_OUTPUT_DIRECTORY>`
+> 9. Follow the OWASP Guidelines to secure Kubernetes manifests.
+
+### Deploy Kubernetes Manifest (Deploy Step)
+> 1. Make sure minikube is up and running.
+> 2. Create a namespace to deploy all applications.
+    `kubectl create namespace devopswork --dry-run -o yaml | kubectl apply -f -`
+> 3. Execute the kubectl apply command to deploy the python applications.
+    `kubectl delete -f <HELM_OUTPUT_DIRECTORY>`
+    `kubectl apply -f <HELM_OUTPUT_DIRECTORY>`
+
+### Create a Taskfile
+Taskfile helps us automate the Docker Build, Docker Scan and Kubernetes Deployment using simple commands. Best to move all steps above to Taskfile for more automation.
+
+For Example.
+    `task <ACTION>`
+
+Taskfile.yaml
+`build:
+   cmd:
+    - docker build -t <DOCKER_ID>/<IMAGE_NAME>:TAG 
+    `
+### Test the Application
+In order to test the application, you should have some form of URL. So, you get the minikube ip from the `minikube ip` and configure this IP in /etc/hosts and test using the following cmd.
+
+Use Postman and cURL to test your application
+`curl -v <DNS>/path`
+
+
