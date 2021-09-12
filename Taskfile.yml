@@ -38,10 +38,6 @@ tasks:
       - docker push micarthur21/app_b:v1      
 
   #Deploy Steps
-  helm-app-a:
-    cmds:
-      - helm template backend/app_a/charts -f backend/app_a/charts/env-values/dev-values.yaml --output-dir dev.tmp 
-  
   k8s-ns:
     - kubectl create namespace devopswork --dry-run -o yaml | kubectl apply -f -
 
@@ -51,6 +47,10 @@ tasks:
     cmds:
       - kubectl delete -f dev.tmp/app-a/templates -n devopswork --force || true
       - kubectl apply -f dev.tmp/app-a/templates -n devopswork
+
+  helm-app-a:
+    cmds:
+      - helm template backend/app_a/charts -f backend/app_a/charts/env-values/dev-values.yaml --output-dir dev.tmp 
 
   k8s-app-b:
     deps:
