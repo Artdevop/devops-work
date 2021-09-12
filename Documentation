@@ -27,7 +27,7 @@ https://helm.sh/docs/intro/install/
 Follow this documentation to install the minikube
 https://minikube.sigs.k8s.io/docs/start/
 
-Enable the Ingress add-ons in miniube
+Enable the Ingress add-ons in minikube
   `minikube addons enable ingress`
 
 ### Taskfile
@@ -36,10 +36,10 @@ https://taskfile.dev/#/installation?id=get-the-binary
 
 ## STEPS
 
-### Create GitHub Repository
+### Create a GitHub Repository
 Go to GitHub and create a git repository. Do git clone and  initialize this in VSCode.
 
-### Create a directory
+### Create a Directory
 Follow these steps to create the directories to store the application code and DevOps scripts.
 
 > 1. mkdir -p backend/{app_a,app_b}/{src,charts}
@@ -58,7 +58,7 @@ Ex:
 Execute the following cmd to create the Dockerfile in the src/ directory.
 > 1. `touch Dockerfile .dockerignore`
 > 2. Dockerfile should have the FROM base image and user creation layer.
-> 3. Docekrfile should have the instructions to copy the requirements.txt and execute the `pip install` to install all required python packages.
+> 3. Dockerfile should have the instructions to copy the requirements.txt and execute the `pip install` to install all required python packages.
 > 4. Finally add CMD to run the python application
 > 5. Once you create the Dockerfile, execute the following cmd to confirm that Dockerfile works fine.
     `docker build -t <DOCKER_ID>/<IMAGE_NAME>:TAG`
@@ -76,7 +76,7 @@ Execute the following cmd to create the Dockerfile in the src/ directory.
 charts/
     env-values/
         dev-value.yaml
-    tempaltes
+    templates
         _helpers.tpl
         deploy.yaml
         svc.yaml
@@ -107,7 +107,7 @@ charts/
 ### Create a Taskfile
 Taskfile helps us automate the Docker Build, Docker Scan and Kubernetes Deployment using simple commands. Best to move all steps above to Taskfile for more automation.
 
-For Example.
+For Example:
     `task <ACTION>`
 
 Taskfile.yaml
