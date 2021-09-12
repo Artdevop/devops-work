@@ -37,7 +37,7 @@ https://taskfile.dev/#/installation?id=get-the-binary
 ## STEPS
 
 ### Create a GitHub Repository
-Go to GitHub and create a git repository. Do git clone and  initialize this in VSCode.
+Go to GitHub and create a git repository. Do git clone and initialize this in VSCode.
 
 ### Create a Directory
 Follow these steps to create the directories to store the application code and DevOps scripts.
@@ -84,7 +84,7 @@ charts/
         secret.yaml
     Chart.yaml
 `
-> 2. Create all files and folders for each applications.
+> 2. Create all files and folders for each application.
 > 3. Add the Kubernetes Deployment Configuration into the deploy.yaml file.
 > 4. Add the Kubernetes Service Configuration into svc.yaml.
 > 5. Add the Kubernetes Ingress Configuration into ingress.yaml.
@@ -105,7 +105,7 @@ charts/
     `kubectl apply -f <HELM_OUTPUT_DIRECTORY>`
 
 ### Create a Taskfile
-Taskfile helps us automate the Docker Build, Docker Scan and Kubernetes Deployment using simple commands. Best to move all steps above to Taskfile for more automation.
+Taskfile helps us automate Docker Build, Docker Scan and Kubernetes Deployment using simple commands. Move all steps above to Taskfile for automation.
 
 For Example:
     `task <ACTION>`
@@ -116,7 +116,7 @@ Taskfile.yaml
     - docker build -t <DOCKER_ID>/<IMAGE_NAME>:TAG 
     `
 ### Test the Application
-In order to test the application, you should have some form of URL. So, you get the minikube ip from the `minikube ip` and configure this IP in /etc/hosts and test using the following cmd.
+In order to test the application, you should have a URL. Get the minikube ip from the `minikube ip`, configure this IP in /etc/hosts and test using the following cmd.
 
 Use Postman and cURL to test your application
 `curl -v <DNS>/path`
