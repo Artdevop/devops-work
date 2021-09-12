@@ -4,21 +4,18 @@ Your task is to accomplish the following:
 backend/app_a/src/Dockerfile
 backend/app_b/src/Dockerfile
 
-
 -Apply OWASP image hardening best practices to both containers.
 DONE
 
--Set up automated local static image scans of the resulting images using a tool like Snyk.NE
-Check the README.md and Tasksfile. 
+-Set up automated local static image scans of the resulting images using a tool like Snyk.
+See README.md and Tasksfile. 
 
 -Create a basic Kubernetes deployment for both applications. 
-backend/app_b/charts
 backend/app_a/charts
-Check the README.md and Tasksfile
+backend/app_b/charts
+See README.md and Tasksfile
 
 -The deployment should incorporate any OWASP guidance for running containers. 
-
-RULE #1 - Setting the namespace for a request  
 
 RULE #2 - Set a user¶
 
@@ -70,19 +67,19 @@ Bonus Points for Any of the Following
 DONE
 
 -Automated local Kubernetes environment for testing.
-Ingress.Yaml file created
+Ingress.Yaml file created 
 
 -Discuss how you would integrate regular scans into a CI pipeline, along with any caveats.
-Any Code changes should trigger the CI Build and it should execute the docker build (task build) and then do docker scan (task scan) to integrate with CI pipeline and store the vulnerability reports somewhere and review with dev / infra team to fix the vulnerabilities.
+Any Code change should trigger the CI Build, execute the docker build (task build), do a docker scan (task scan) as part of the CI pipeline integration, and store the vulnerability reports somewhere to be reviewed by the dev / infra team to fix any vulnerability.
 
-Docker build and scan take lots of time so you must do some local/remote caching to speed up the build process. 
+Docker build and scan take a lot of time so you may do some local/remote caching to speed up the build process. 
 
 Tag the docker build with commit id to track the changes in git.
 
 
 -Discuss how you would expose and secure this application publicly on Kubernetes.
 Ingress Controller helps us expose the application outside the Kubernetes Cluster in a secure manner. All apps must be exposed through the Ingress Controller.
-You should secure the app with TLS communication whereever possible.
-In order to use the TLS, Ingress controller should be configured with Public key and Private Key with the appropriate DNS entry in the public certificate. It is good practice to purchase the DNS cert from a well known CA Authority.
+You should secure the app with TLS communication wherever possible.
+In order to use the TLS, Ingress controller should be configured using a Public and Private Key with the appropriate DNS entry in the public certificate. It is good practice to purchase the DNS certificate from a well known CA Authority.
 This helps us send encrypted traffic between client and server.
 
